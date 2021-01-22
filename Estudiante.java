@@ -1,4 +1,5 @@
 /**
+ * @Eneko Seminario
  * Un objeto de esta clase guarda la información de un estudiante
  *
  */
@@ -17,9 +18,30 @@ public class Estudiante {
      *  
      */
     public Estudiante(String lineaDatos) {
+         String[] informacionAlumno = lineaDatos.split(SEPARADOR);
+         this.nombre = nombreCompleto(informacionAlumno[0]);
+         this.apellidos = informacionAlumno[1].toUpperCase();
+         this.faltasNoJustificadas = Integer.parseInt(informacionAlumno[2]);
+         this.faltasJustificadas =  Integer.parseInt(informacionAlumno[3]);
          
-
     }
+
+    private String nombreCompleto(String nombre)
+    {
+        String[] nombres = nombre.split("");
+        String nombreAlumno = "";
+        String inicialesNombre = "";
+        for(int i = 0; i < nombres.length; i++){
+            inicialesNombre =  String.valueOf(nombres[i].charAt(0));
+            nombreAlumno += inicialesNombre + nombres[i].substring(0); 
+            if(nombres[i] != ""){
+                inicialesNombre =  String.valueOf(nombres[i].charAt(0));
+                 nombreAlumno += inicialesNombre.toUpperCase() + ".";
+            }
+        }
+        return nombreAlumno;
+    }
+
 
 
     /**
