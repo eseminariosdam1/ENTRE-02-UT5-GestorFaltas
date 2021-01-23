@@ -114,13 +114,13 @@ public class Estudiante {
      */
     public String toString() {
         String apercibimientos = "";
-        if(faltasNoJustificadas >= 10){
+        if(this.faltasNoJustificadas >= 10){
             apercibimientos += "DIEZ";
-        }else if(faltasNoJustificadas >= 20){
+        }else if(this.faltasNoJustificadas >= 20){
             apercibimientos += "DIEZ VEINTE";
-        }else if(faltasNoJustificadas >= 30){
+        }else if(this.faltasNoJustificadas >= 30){
              apercibimientos += "DIEZ VEINTE TREINTA";
-        }else if(faltasNoJustificadas >= 0 || faltasNoJustificadas <10 ){
+        }else if(this.faltasNoJustificadas >= 0 || faltasNoJustificadas <10 ){
             apercibimientos += "Este alumno no esta apercibido";
         }
            String nombreConApellidos = apellidos + "," + nombre;
