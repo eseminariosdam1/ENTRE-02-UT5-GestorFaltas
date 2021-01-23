@@ -113,18 +113,28 @@ public class Estudiante {
      * (ver enunciado)
      */
     public String toString() {
-        
-        return null;
-
+        String apercibimientos = "";
+        if(faltasNoJustificadas >= 10){
+            apercibimientos += "DIEZ";
+        }else if(faltasNoJustificadas >= 20){
+            apercibimientos += "DIEZ VEINTE";
+        }else if(faltasNoJustificadas >= 30){
+             apercibimientos += "DIEZ VEINTE TREINTA";
+        }else if(faltasNoJustificadas >= 0 || faltasNoJustificadas <10 ){
+            apercibimientos += "Este alumno no esta apercibido";
+        }
+           String nombreConApellidos = apellidos + "," + nombre;
+           String str = String.format("%-25s %-40s %-25s %-40s %-25s %-40s %-40s %-40s","Apellidos y Nombre:",nombreConApellidos,"\nFaltas No Justificadas:", faltasNoJustificadas,
+           "\nFaltas Justificadas:", faltasJustificadas, "\nApercibimientos:",apercibimientos);
+           return str;
     }
 
-
-     public static void main(String[] args) {
-        Estudiante e1 = new Estudiante("  ander ibai  ,  Ruiz Sena , 12, 23");
+    public static void main(String[] args) {
+        Estudiante e1 = new Estudiante("  ander ibai , Ruiz Sena , 12, 23");
         System.out.println(e1);
         System.out.println();
         Estudiante e2 = new Estudiante(
-                " pedro josé   andrés  ,  Troya Baztarrica , 42, 6 ");
+                " pedro josé andrés  ,  Troya Baztarrica , 42, 6 ");
         System.out.println(e2);
         System.out.println();
         Estudiante e3 = new Estudiante("  Javier  ,  Suescun  Andreu , 39, 9 ");
@@ -133,7 +143,6 @@ public class Estudiante {
         Estudiante e4 = new Estudiante("julen, Duque Puyal, 5, 55");
         System.out.println(e4);
         System.out.println();
-        
 
         System.out.println("---------------------------------");
         e1.justificar(3);
