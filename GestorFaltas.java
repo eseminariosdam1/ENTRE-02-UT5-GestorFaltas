@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
+ * @Eneko Semiario
  * Un objeto de esta clase permite registrar estudiantes de un
  * curso (leyendo la información de un fichero de texto) y 
  * emitir listados con las faltas de los estudiantes, justificar faltas, 

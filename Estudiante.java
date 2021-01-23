@@ -41,9 +41,7 @@ public class Estudiante {
         }
         return nombreAlumno;
     }
-
-
-
+    
     /**
      * accesor para el nombre completo
      */
