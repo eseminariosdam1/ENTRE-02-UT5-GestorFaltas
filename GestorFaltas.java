@@ -11,10 +11,11 @@ import java.util.Scanner;
  *
  */
 public class GestorFaltas {
-     
+     private int total;
+     private  Estudiante[] estudiantes;
 
     public GestorFaltas(int n) {
-         
+         estudiantes = new Estudiante[n];
     }
 
     /**
@@ -22,7 +23,7 @@ public class GestorFaltas {
      * false en otro caso
      */
     public boolean cursoCompleto() {
-        return false;
+        return total >= estudiantes.length;
     }
 
     /**
@@ -38,12 +39,24 @@ public class GestorFaltas {
      *    
      */
     public void addEstudiante(Estudiante nuevo) {
+            // if(!cursoCompleto()){
+                // for(int i = 0; i <estudiantes.length; i++){
+                    // if(estudiantes[i].getApellidos().toLowerCase().compareTo(nuevo.getApellidos().toLowerCase()) > 0){
+                    // estudiantes[i] = estudiantes[i + 1];
+                    // estudiantes[total] = nuevo;
+                    // total++;
+                // }else {
+                // System.out.println("El alumno ya está matriuclado en el curso");
+                // }
+            // }
+        // }
+    // }falta acabar
+           
+        }
         
+    
 
-    }
-
-
-    /**
+  /**
      * buscar un estudiante por sus apellidos
      * Si está se devuelve la posición, si no está se devuelve -1
      * Es indiferente mayúsculas / minúsculas
@@ -52,9 +65,15 @@ public class GestorFaltas {
      *  
      */
     public int buscarEstudiante(String apellidos) {
-         
-        return 0;
+         for(int i = 0; i < estudiantes.length; i++){
+            if(estudiantes[i].getApellidos().equalsIgnoreCase(apellidos)){
+                return i;
+            }
+        }
+        return -1;
     }
+
+    
 
     /**
      * Representación textual del curso
