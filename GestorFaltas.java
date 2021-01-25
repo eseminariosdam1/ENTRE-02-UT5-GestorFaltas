@@ -97,7 +97,7 @@ public class GestorFaltas {
      */
     public void justificarFaltas(String apellidos, int faltas) {
          
-
+        
     }
 
     /**
@@ -106,9 +106,19 @@ public class GestorFaltas {
      * Método de selección directa
      */
     public void ordenar() {
-        
-
-    }
+         for (int i = 0; i < estudiantes.length - 1; i++) {
+            int posmin = i;
+            for (int j = i + 1; j < estudiantes.length; j++) {
+                if (estudiantes[j].getFaltasNoJustificadas() < estudiantes[posmin].getFaltasNoJustificadas()) {
+                    posmin = j;
+                }
+            }
+            Estudiante aux = estudiantes[posmin];
+            estudiantes[posmin] = estudiantes[i];
+            estudiantes[i] = aux;
+        }
+    // }
+}
 
     /**
      * anular la matrícula (dar de baja) a 

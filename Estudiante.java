@@ -28,7 +28,7 @@ public class Estudiante {
 
     private String nombreCompleto(String nombre)
     {
-        String[] nombres = nombre.split("");
+        String[] nombres = nombre.split(SEPARADOR);
         String nombreAlumno = "";
         String inicialesNombre = "";
         for(int i = 0; i < nombres.length; i++){
