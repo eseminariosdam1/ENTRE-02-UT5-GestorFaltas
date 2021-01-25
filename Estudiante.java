@@ -19,10 +19,10 @@ public class Estudiante {
      */
     public Estudiante(String lineaDatos) {
          String[] informacionAlumno = lineaDatos.split(SEPARADOR);
-         this.nombre = nombreCompleto(informacionAlumno[0]);
-         this.apellidos = informacionAlumno[1].toUpperCase();
-         this.faltasNoJustificadas = Integer.parseInt(informacionAlumno[2]);
-         this.faltasJustificadas =  Integer.parseInt(informacionAlumno[3]);
+         this.nombre = nombreCompleto(informacionAlumno[0].trim());
+         this.apellidos = informacionAlumno[1].trim().toUpperCase();
+         this.faltasNoJustificadas = Integer.parseInt(informacionAlumno[2].trim());
+         this.faltasJustificadas =  Integer.parseInt(informacionAlumno[3].trim());
          
     }
 
@@ -124,7 +124,7 @@ public class Estudiante {
             apercibimientos += "Este alumno no esta apercibido";
         }
            String nombreConApellidos = apellidos + "," + nombre;
-           String str = String.format("%-25s %-40s %-25s %-40s %-25s %-40s %-40s %-40s","Apellidos y Nombre:",nombreConApellidos,"\nFaltas No Justificadas:", faltasNoJustificadas,
+           String str = String.format("%-24s %-35s %-25s %-35s %-25s %-35s %-25s %-35s","Apellidos y Nombre:",nombreConApellidos,"\nFaltas No Justificadas:", faltasNoJustificadas,
            "\nFaltas Justificadas:", faltasJustificadas, "\nApercibimientos:",apercibimientos);
            return str;
     }

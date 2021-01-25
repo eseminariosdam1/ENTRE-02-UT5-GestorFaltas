@@ -39,23 +39,21 @@ public class GestorFaltas {
      *    
      */
     public void addEstudiante(Estudiante nuevo) {
-            // if(!cursoCompleto()){
-                // for(int i = 0; i <estudiantes.length; i++){
-                    // if(estudiantes[i].getApellidos().toLowerCase().compareTo(nuevo.getApellidos().toLowerCase()) > 0){
-                    // estudiantes[i] = estudiantes[i + 1];
-                    // estudiantes[total] = nuevo;
-                    // total++;
-                // }else {
-                // System.out.println("El alumno ya está matriuclado en el curso");
-                // }
-            // }
-        // }
-    // }falta acabar
-           
+            if(!cursoCompleto()){
+                for(int i = 0; i <estudiantes.length; i++){
+                    if(estudiantes[i].getApellidos().toLowerCase().compareTo(nuevo.getApellidos().toLowerCase()) > 0){
+                    estudiantes[i] = estudiantes[i + 1];
+                    estudiantes[total] = nuevo;
+                    total++;
+                } else if(buscarEstudiante(nuevo.getApellidos()) == 1){
+            System.out.println("El estudiante se encuentra matriculado en el curso");
+                }else {
+            System.out.println("El curso ya esta completo");
         }
+    }
+}
+}
         
-    
-
   /**
      * buscar un estudiante por sus apellidos
      * Si está se devuelve la posición, si no está se devuelve -1
@@ -81,10 +79,13 @@ public class GestorFaltas {
      *  
      */
     public String toString() {
-        
-        return null;
-
+          StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < total; i++){
+            sb.append(estudiantes[i].toString() + "\n--------------------\n");
+        }
+        return sb.toString();
     }
+       
 
     /**
      *  Se justifican las faltas del estudiante cuyos apellidos se proporcionan
