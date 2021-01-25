@@ -96,8 +96,13 @@ public class GestorFaltas {
      *  justificar también)
      */
     public void justificarFaltas(String apellidos, int faltas) {
-         
-        
+       int estudiante = 0;
+       
+        if(estudiante < estudiantes.length)
+        for(int i = 0; i < estudiantes.length; i++){
+            estudiantes[estudiante].justificar(faltas);
+            System.out.println("Se le han justificado " + faltas + " al alumno " + estudiantes[estudiante].getApellidos() + ", " + estudiantes[estudiante].getNombre());
+        }
     }
 
     /**
