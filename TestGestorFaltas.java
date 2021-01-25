@@ -8,7 +8,20 @@ public class TestGestorFaltas {
      * (ver enunciado)
      */
     public static void main(String[] args) {
-        
+            GestorFaltas curso = new GestorFaltas(Integer.parseInt(args[0]));
+            
+            curso.leerDeFichero();
+            System.out.println(curso.toString());
+            
+            curso.justificarFaltas("IRISO FLAMARIQUE", 6);
+            System.out.println("Se le han justificado 6 faltas a IRISO FLAMARIQUE, Carla ");
+            
+            curso.ordenar();
+            System.out.println("Se han ordenado de mayor a menor numero de faltas injustificadas");
+            
+            System.out.println(curso.toString());
+            curso.anularMatricula();
+            System.out.println(curso.toString());
     }
 
 }
