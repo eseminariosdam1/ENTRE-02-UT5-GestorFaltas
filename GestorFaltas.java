@@ -122,7 +122,7 @@ public class GestorFaltas {
             estudiantes[posmin] = estudiantes[i];
             estudiantes[i] = aux;
         }
-    // }
+    
 }
 
     /**
@@ -131,8 +131,12 @@ public class GestorFaltas {
      */
     public void anularMatricula() {
          
-
+        for(int i = 0; i < total; i++){
+            if(estudiantes[i].getFaltasNoJustificadas() >= 30){
+                total--;
     }
+}
+}
 
     /**
      * Lee de un fichero de texto los datos de los estudiantes
